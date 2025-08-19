@@ -21,7 +21,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 > The `v3` versions of keyclicks boards are configured with `16MHz` clock
 > frequencies instead of `8MHz` as for the non-v3 versions. Be careful when
 > flashing your board. In my case, the 16MHz presents no problem but your mileage
-> may vary.
+> may vary. This setting can be changed in `mcuconf.h`
 
 > [!NOTE]
 > The w-corne-choc-v3 has a curious matrix and layout definition in the source
