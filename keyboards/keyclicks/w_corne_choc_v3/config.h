@@ -26,8 +26,7 @@
 #define ONESHOT_TIMEOUT 500
 
 #define SERIAL_USART_DRIVER SD2
-#define SERIAL_DRIVER       SD2
-
+#define UART_DRIVER       SD2
 
 // #define SERIAL_USART_FULL_DUPLEX   // Enable full duplex operation mode.
 // #define SERIAL_USART_TX_PIN A9     // USART TX pin
@@ -87,3 +86,6 @@
 #define RGBLIGHT_VAL_STEP 8
 // #define RGBLIGHT_ANIMATIONS
 #endif
+
+
+

@@ -22,8 +22,9 @@ RGB_MATRIX_ENABLE = no
 RGB_MATRIX_DRIVER = ws2812
 SERIAL_DRIVER = usart
 
+UART_DRIVER_REQUIRED = yes
+
 SRC += matrix.c
-QUANTUM_LIB_SRC += uart.c
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
