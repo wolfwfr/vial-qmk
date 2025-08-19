@@ -7,9 +7,9 @@ LTO_ENABLE = yes
 UNICODE_ENABLE = no
 OLED_DRIVER_ENABLE = no
 #CONSOLE_ENABLE = yes			# Console for debug
-MUSIC_ENALBE = yes
+MUSIC_ENABLE = yes
 MIDI_ENABLE = yes
-SPACE_CADET_ENABLE = no
+SPACE_CADET_ENABLE = yes
 
 # must be disabled for VIA support
 
