@@ -15,6 +15,9 @@ Make example for this keyboard (after setting up your build environment):
 Upon successful compilation this should create a `.vfw` file among others that
 you can use to flash the board using a local instance of vial.
 
+Pay attention to the firmware size! The STM32F103C8T6 inside the dongle only has
+`64kB of flash memory`. Any firmware exceeding that size will not fit.
+
 See the [build environment
 setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make
 instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more
