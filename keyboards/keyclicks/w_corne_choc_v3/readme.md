@@ -34,19 +34,30 @@ Guide](https://docs.qmk.fm/#/newbs).
 
 > [!NOTE]
 > The w-corne-choc-v3 has a curious matrix and layout definition in the source
-> code. First, the right-hand side is represented in reverse. So your top row
-> with the `YUIOP` buttons need to be configured as `POIUY` if you configure
-> your layout in the source code. Second, the original layout in `info.json` was
-> pretty garbled up, as will be evidenced when you have a look at the output of
-> `qmk info -l -kb "keyclicks/w_corne_choc_v3"`. But worse than just producing a
-> bad image, it caused compilation errors due to the QMK tooling not accepting
-> the one negative number in the layout definition. Through a little bit of
-> trial and error I have rearranged the bottom keys in the layout in `info.json`
-> in order to better reflect the look of the keyboard. The important thing
-> though is that this new version (now renamed to `keyboard.json` by the way, to
-> reflect modern QMK idioms) compiles successfully. I am not entirely sure, but
-> I think, at least when relying on vial, there is no functional consequence to
-> altering the layout in this file.
+> code. First, the right-hand side is represented in reverse (i.e. mirrored). So
+> your top row with the `YUIOP` keys (in a qwerty layout) on the right half need
+> to be configured as `POIUY` if you configure your layout in the source code.
+> Second, the original layout in `info.json` was pretty garbled up, as will be
+> evidenced when you have a look at the output of `qmk info -l -kb
+"keyclicks/w_corne_choc_v3"`. But worse than just producing a bad image, it
+> caused compilation errors due to the QMK tooling not accepting the one
+> negative number in the layout definition. I have rearranged the bottom keys in
+> the layout in `info.json` in order to better reflect the look of the keyboard.
+> The important thing though is that this new version (now renamed to
+> `keyboard.json` by the way, to reflect modern QMK idioms) compiles
+> successfully. I am not entirely sure, but I think, at least when relying on
+> vial, there is no functional consequence to altering the layout in this file.
+
+> [!NOTE]
+> If you're encountering errors like `VENDOR_ID`, `PRODUCT_ID`, or `DEVICE_VER`
+> undefined, coming from `tmk_core/protocol/usb_descriptor.c`, then you might
+> have a problem with your `info.json` or `keyboard.json` file not parsing
+> successfully, which should be reported early on in the compilation log output.
+> The json file contains information about the USB device and if the file fails
+> to parse, it is ignored in later compilation steps. When this happens (as it
+> happened to me), these later compilation steps fallback to a deprecated method
+> for obtaining USB device information, causing these errors. Ensure that the
+> json file is parsed correctly during compilation.
 
 ## Bootloader
 
@@ -91,4 +102,5 @@ Enter the bootloader in 3 ways:
 8. Select the `flash` button and wait until the progress bar reports 100%
    completion.
 9. The keyboard should now be flashed with your firmware and be operational. It
-   is now safe to unplug the dongle when necessary.
+   is now safe to unplug the dongle when necessary. You can now reload your
+   previously saved layout if necessary.
