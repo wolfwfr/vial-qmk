@@ -111,31 +111,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (get_highest_layer(state)) {
-        case _BASE:
-            break;
-        case _FN:
-            break;
-        case _LAYER_2:
-            break;
-        case _LAYER_3:
-            break;
-        case _LAYER_4:
-            break;
+    state = update_tri_layer_state(state, _FN, _LAYER_2, _LAYER_3);
+  switch (get_highest_layer(state)) {
+      case _BASE:
+          break;
+      case _FN:
+          break;
+      case _LAYER_2:
+          break;
+      case _LAYER_3:
+          break;
+      case _LAYER_4:
+          break;
 
-        case _LAYER_5:
-            break;
+      case _LAYER_5:
+          break;
 
-        case _LAYER_6:
-            break;
+      case _LAYER_6:
+          break;
 
-        case _LAYER_7:
-            break;
+      case _LAYER_7:
+          break;
 
-        default:
-            break;
-    }
-  return state;
+      default:
+          break;
+  }
+   return state;
 }
 
 // led_config_t g_led_config = { {
